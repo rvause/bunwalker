@@ -1,18 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Countdown to Bunwalker (FFXIV)</title>
+    <title>Countdown to Male Viera (FFXIV: Endwalker)</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Countdown to the release of Final Fantasy XIV: Bunwalker.">
     <link rel="stylesheet" href="../node_modules/picnic/picnic.css">
     <style>
+        body {
+            background-image: url('img/bg.jpg');
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .overlay {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .countdown {
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 3px #000, 0 0 5px #000;
+            font-size: 24px;
+            height: 100%;
+            align-items: center;
+        }
 
+        .countdown span {
+            position: relative;
+            display: block;
+        }
+        .countdown span.smaller {
+            font-size: 20px;
+        }
+        .viera {
+            position: fixed;
+            z-index: 0;
+            background-image: url('img/viera.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 452px;
+            top: 10px;
+        }
+        .copy {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            font-size: 10px;
+            color: #fff;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Countdown to Bunwalker</h1>
-    <span id="timer"></span>
+    <div class="overlay"></div>
+    <div class="viera"></div>
+    <div class="flex countdown">
+        <div>
+            <span>Male Viera in FFXIV Endwalker</span>
+            <span id="timer" class="smaller"></span>
+        </div>
+    </div>
+    <div class="copy">Copyright (C) 2010 - 2021 SQUARE ENIX CO., LTD. All Rights Reserved.</div>
 </body>
 <script type="text/javascript" src="js/main.js"></script>
 </html>

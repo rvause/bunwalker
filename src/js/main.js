@@ -8,6 +8,7 @@ let timerEl = null;
 function startTimer() {
     console.info("Timer started...");
     timerEl = document.getElementById("timer");
+    updateTimer();
     timerInt = setInterval(updateTimer, 1000);
 }
 
@@ -23,5 +24,8 @@ function getTime() {
 
 function updateTimer() {
     const current = getTime();
-    timerEl.textContent = `${current.days} days, ${current.hours} hours, ${current.minutes} minutes, ${current.seconds} seconds`;
+    const newEl = timerEl.cloneNode(false);
+    newEl.innerHTML = `${current.days} days<br>${current.hours} hours<br>${current.minutes} minutes<br>${current.seconds} seconds`;
+    timerEl.parentNode.replaceChild(newEl, timerEl);
+    timerEl = newEl;
 }
