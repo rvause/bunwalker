@@ -1,7 +1,7 @@
 window.onload = () => startTimer();
 
 // 2021-11-19T09:00:00
-const bunwalkerDate = new Date(2021, 11, 19, 9, 0, 0).getTime();
+const bunwalkerDate = new Date("2021-11-19T09:00:00").getTime();
 let timerInt = null;
 let timerEl = null;
 
