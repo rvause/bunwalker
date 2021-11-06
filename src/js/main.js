@@ -1,7 +1,7 @@
 window.onload = () => startTimer();
 
 // 2021-11-19T09:00:00
-const bunwalkerDate = new Date("2021-11-19T09:00:00").getTime();
+const bunwalkerDate = new Date("2021-12-03T09:00:00").getTime();
 let timerInt = null;
 let timerEl = null;
 
@@ -10,6 +10,8 @@ function startTimer() {
     timerEl = document.getElementById("timer");
     updateTimer();
     timerInt = setInterval(updateTimer, 1000);
+
+    selectBanner();
 }
 
 function getTime() {
@@ -28,4 +30,9 @@ function updateTimer() {
     newEl.innerHTML = `${current.days} days<br>${current.hours} hours<br>${current.minutes} minutes<br>${current.seconds} seconds`;
     timerEl.parentNode.replaceChild(newEl, timerEl);
     timerEl = newEl;
+}
+
+function selectBanner() {
+    const $recEl = document.getElementsByClassName("recruit")[0];
+    $recEl.children[Math.floor(Math.random() * $recEl.children.length)].style = "display: initial;";
 }

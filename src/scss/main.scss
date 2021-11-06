@@ -72,6 +72,10 @@ body {
 }
 
 .recruit {
+    div {
+        display: none;
+    }
+
     padding: 5px;
     background: linear-gradient(#FC5E7F, #682634);
     color: #fff;
