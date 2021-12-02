@@ -16,6 +16,9 @@ function startTimer() {
 
 function getTime() {
     const diff = bunwalkerDate - (new Date().getTime());
+    if (diff <= 0) {
+        return null
+    }
     return {
         seconds: Math.floor((diff / 1000) % 60),
         minutes: Math.floor((diff / (1000 * 60)) % 60),
@@ -27,7 +30,11 @@ function getTime() {
 function updateTimer() {
     const current = getTime();
     const newEl = timerEl.cloneNode(false);
-    newEl.innerHTML = `${current.days} days<br>${current.hours} hours<br>${current.minutes} minutes<br>${current.seconds} seconds`;
+    if (current) {
+        newEl.innerHTML = `${current.days} days<br>${current.hours} hours<br>${current.minutes} minutes<br>${current.seconds} seconds`;
+    } else {
+        newEl.innerHTML = "The wait is over!";
+    }
     timerEl.parentNode.replaceChild(newEl, timerEl);
     timerEl = newEl;
 }
